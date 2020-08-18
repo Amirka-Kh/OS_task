@@ -1,0 +1,14 @@
+# 1st task
+mkdir ~/week1
+ls /usr/bin | grep gcc | sort -r > ~/week1/ex1.txt
+
+# 2nd task
+history > ~/week1/ex2.txt
+
+# 3rd task
+echo -e "date\nsleep 3\ndate" > ~/week1/ex3.sh
+sh ~/week1/ex3.sh
+
+# 4th task
+echo "#include <stdio.h>\nint main(){\n printf(\"Hello world\");\n return 0;\n}" > ~/week1/main.c
+gcc -o ~/week1/ex4 ~/week1/main.c v
