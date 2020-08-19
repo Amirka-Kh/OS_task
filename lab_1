@@ -1,6 +1,8 @@
 # 1st task
 mkdir ~/week1
 ls /usr/bin | grep gcc | sort -r > ~/week1/ex1.txt
+or
+ls /usr/bin | sort -r | grep --ignore-case "gcc" > ex1.txt
 
 # 2nd task
 history > ~/week1/ex2.txt
@@ -10,5 +12,15 @@ echo -e "date\nsleep 3\ndate" > ~/week1/ex3.sh
 sh ~/week1/ex3.sh
 
 # 4th task
-echo "#include <stdio.h>\nint main(){\n printf(\"Hello world\");\n return 0;\n}" > ~/week1/main.c
-gcc -o ~/week1/ex4 ~/week1/main.c v
+gedit ~/week1/main.c
+--------
+then I write this code to the file:
+#include <stdio.h>
+int main()
+{
+printf(“Hello World”);
+return 0;
+}
+--------
+gcc main.c -o ex4
+./ex4
