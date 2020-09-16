@@ -8,10 +8,9 @@
  */
 
 struct s_threadM {
-    // mutex and condition to allow main thread to wait
+    // mutex to allow main thread to wait
     // for the new thread to set its tid
     pthread_mutex_t mtx;
-    pthread_cond_t cond;
 
     // to hold new thread's tid
     pid_t id;
@@ -31,9 +30,6 @@ void *foo(void *arg)
     thM->id = syscall(SYS_gettid);
     thM->ready = 1;
 
-    // signal main thread that we've set id
-    pthread_cond_signal(&thM->cond);
-
     // unlock resources
     pthread_mutex_unlock(&thM->mtx);
 
@@ -46,7 +42,6 @@ void CreateThreads(unsigned int n)
 
     // struct to pass back tid
     struct s_threadM threadM;
-    pthread_cond_init(&threadM.cond, NULL);
     pthread_mutex_init(&threadM.mtx, NULL);
 
     for (int i = 0; i < n; i++) {
@@ -61,14 +56,11 @@ void CreateThreads(unsigned int n)
         if (pthread_create(&thread, NULL, foo, &threadM)) {
             printf("pthread error!\n");
         } else {
-            // wait on the condition until the ready flag is set
-            while (!threadM.ready) {
-                pthread_cond_wait(&threadM.cond, &threadM.mtx);
-            }
             // Now we have the tid
             printf("%d thread was created\n", i+1);
             printf("its 'id' %d\n", threadM.id);
         }
+
         // unlock the mutex when done
         pthread_mutex_unlock(&threadM.mtx);
 
@@ -76,9 +68,9 @@ void CreateThreads(unsigned int n)
     }
 
     /* When we're completely done with the struct we need to clean up the
-       mutex and condition variable */
+       mutex variable */
     pthread_mutex_destroy(&threadM.mtx);
-    pthread_cond_destroy(&threadM.cond);
+
 }
 
 int main(){
