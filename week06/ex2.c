@@ -25,7 +25,7 @@ void compute_wait_time(process list[], int size, int wt[]){
 
     /* Here I denote time, we will increment it to find
      * Which process at this time can be executed*/
-    int finish = 0, time = 0;
+    int time = 0;
 
     /* I initialised min with INT_MAX in order to
      * Compare process burst time, otherwise we can get
