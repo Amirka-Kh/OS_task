@@ -52,7 +52,7 @@ void compute_wait_time(process list[], int size, int wt[]){
             if ((list[j].arrival <= time) && (rt[j] < min) && (rt[j]>0)){
                 min = rt[j];
                 shortest = j;
-                check = 1;   // 1 stands for true
+                check = 1;    // 1 stands for true
             }
         }
 
