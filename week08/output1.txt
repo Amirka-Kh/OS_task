@@ -1,0 +1,14 @@
+the output after free -t - h
+
+              total        used        free      shared  buff/cache   available
+Mem:           12Gi        95Mi        12Gi       0.0Ki       206Mi        12Gi
+Swap:         4.0Gi          0B       4.0Gi
+Total:         16Gi        95Mi        16Gi
+
+
+
+the output after vmstat
+
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 1  0      0 12674024  14012 196996    0    0     0     1    1    3  0  0 100  0  0
