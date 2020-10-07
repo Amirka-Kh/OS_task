@@ -1,0 +1,33 @@
+i ran the code. 
+
+top - 19:37:08 up 4 days, 17:39,  0 users,  load average: 0.00, 0.00, 0.00                The MiB Mem were decreasing
+Tasks:  16 total,   1 running,  10 sleeping,   5 stopped,   0 zombie                      After finish it returned to previous condition
+%Cpu(s):  0.1 us,  0.0 sy,  0.0 ni, 99.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  12678.7 total,  12301.9 free,    168.9 used,    207.9 buff/cache
+MiB Swap:   4096.0 total,   4096.0 free,      0.0 used.  12268.3 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                           
+15125 amir_kh+  20   0   74200  72820   1044 S   1.0   0.6   0:00.05 p
+    1 root      20   0    1100    576    516 S   0.0   0.0   6:59.92 init
+ 9445 root      20   0    1448    432     16 S   0.0   0.0   0:00.00 init
+ 9446 root      20   0    1448    432     16 S   0.0   0.0   0:00.13 init
+ 9447 amir_kh+  20   0   10552   5520   3280 S   0.0   0.0   0:00.13 bash
+ 9481 amir_kh+  20   0    9896   2908   2644 T   0.0   0.0   0:00.01 vmstat
+ 9482 amir_kh+  20   0    9896   2904   2644 T   0.0   0.0   0:00.00 vmstat
+
+after it finished
+
+top - 19:37:59 up 4 days, 17:40,  0 users,  load average: 0.00, 0.00, 0.00
+Tasks:  15 total,   1 running,   9 sleeping,   5 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.2 sy,  0.0 ni, 99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+MiB Mem :  12678.7 total,  12370.2 free,    100.7 used,    207.8 buff/cache
+MiB Swap:   4096.0 total,   4096.0 free,      0.0 used.  12336.6 avail Mem
+
+  PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                                           
+    1 root      20   0    1448    844    516 S   6.0   0.0   7:00.39 init
+ 9445 root      20   0    1448    432     16 S   0.0   0.0   0:00.00 init
+ 9446 root      20   0    1448    432     16 S   0.0   0.0   0:00.13 init
+ 9447 amir_kh+  20   0   10552   5520   3280 S   0.0   0.0   0:00.13 bash
+ 9481 amir_kh+  20   0    9896   2908   2644 T   0.0   0.0   0:00.01 vmstat
+ 9482 amir_kh+  20   0    9896   2904   2644 T   0.0   0.0   0:00.00 vmstat
+ 9862 amir_kh+  20   0    9896   3096   2852 T   0.0   0.0   0:00.00 vmstat
