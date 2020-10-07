@@ -1,0 +1,2 @@
+free -t -h
+vmstat
