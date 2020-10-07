@@ -1,0 +1,12 @@
+Virtual Memory is like image derived from Physical Memory domain. There is MMU performs
+these mappings, but it is bigger (it makes an illusion to users of a larger memory).
+
+Also VM is slower than PM because Virtual Memory should determine the real address of 
+application in Physical Memory. MMU takes that responsibility.
+
+Virtual Memory cannot directly access to the CPU, while Physical Memory can.
+
+Virtual Memory makes applications think that they are running in their address space, 
+while in a physical memory they have different addresses. VM makes application\program 
+self-contained (does not overwrite other application memory space), solve issue with
+memory allocating (MMU and OS make sure that map from VM to Physical Memory goes right).
