@@ -1,0 +1,15 @@
+So, our virtual address consist of 16 bits:
+_ _ _ _ | _ _ _ _ | _ _ _ _ | _ _ _ _  
+
+Because our pages are 8 KB, there is should
+be 13 offset bits. For example, we want access 
+6409 address, to do that represent that number 
+we need 13 bits. 
+1 1001 0000 1001 
+13 bits let us access any address in the 
+diapason of 8KB.
+
+So, we left with 3 bits for index. 
+With 3 bits we can have 8 variants.
+
+Therefore, the answer is 8 entities
