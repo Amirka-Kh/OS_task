@@ -8,13 +8,17 @@ There will be 2 child processes created by the 2nd fork()
 There will be 4 child processes created by the 3rd fork()
 this is branch from child process, but we have a parent 
 therefore 4*2 = 8 the same logic for 5 */
-//0 -- 0 -- 0 -- 0
-//     |    |
-//     |    0
-//     |
-//     | -- 0 -- 0
-//     |
-//     0
+/*
+init─┬─init───sshd───sshd───sshd
+     ├─init───init───bash─┬─cat
+     │                    ├─po─┬─po─┬─po───po
+     │                    │    │    └─po
+     │                    │    ├─po───po
+     │                    │    └─po
+     │                    └─pstree
+     ├─init───init───bash
+     └─{init}
+*/
 
 //For 5 fork() executions - 32 processes are created.
 
