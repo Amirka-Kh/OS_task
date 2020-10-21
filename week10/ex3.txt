@@ -1,0 +1,13 @@
+-rw-rw-rw- 1 amir_khuja amir_khuja 0 Oct 21 13:04 _ex3.txt
+-rwxrw-rwx 1 amir_khuja amir_khuja 0 Oct 21 13:04 _ex3.txt
+-rwxrwxrwx 1 amir_khuja amir_khuja 0 Oct 21 13:04 _ex3.txt
+
+
+
+# 660 stands for -rw-rw---- owner\group can read\write file
+# 775 stands for -rwxrwxr-x owner\group\other can read\write\execute file 
+# and owner\group can write(edit) file
+# 777 stands for -rwxrwxrwx it means that all(owner\group\other) are granted with all permission
+-rwxrwxrwx 1 amir_khuja amir_khuja 452 Oct 21 13:17 ex3.txt
+-rwxrwxrwx 1 amir_khuja amir_khuja 452 Oct 21 13:17 ex3.txt
+
