@@ -1,0 +1,9 @@
+links -> . 1
+links -> .. 1
+links -> ex4.txt 1
+links -> file1 2
+links -> file2 1
+links -> p 1
+links -> _link1 2
+file1 23080948090325174
+_link1 23080948090325174
