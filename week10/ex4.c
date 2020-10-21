@@ -1,3 +1,7 @@
+//
+// This code works on linux terminal
+//
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <dirent.h>
@@ -16,23 +20,23 @@ int main(){
         return 1;
     }
 
-    while ((entry=readdir(directory))){
-        /*
-        unsigned int m = en_info.st_mode;
-        if (S_ISDIR(m)){
-            printf("it is dir: %s\n", entry->d_name);
-        }
-        */
-        stat(entry->d_name,&en_info);
-        if( S_ISDIR(en_info.st_mode) )
-            printf("%4s: %s\n","Dir",entry->d_name);
-        else
-            printf("%4s: %s\n","File",entry->d_name);
+    struct dirent * a[10];              // array of pointers to the next directory entry
+    int index = 0;                      // index in ino_s array
 
-        if (!stat(entry->d_name, &en_info) && en_info.st_nlink >= 2) {
-            printf("%lu", en_info.st_ino);
-            printf("%lu", en_info.st_nlink);
+
+    while ((entry=readdir(directory))){
+
+        stat(entry->d_name,&en_info);
+        printf("links -> %s %lu\n",entry->d_name, en_info.st_nlink);
+
+        if (en_info.st_nlink >= 2) {
+            a[index] = entry;
+            index++;
         }
+    }
+
+    for (int i = 0; i < index; i++){
+        printf("%s %lu\n",a[i]->d_name, a[i]->d_ino);
     }
 
     closedir(directory);
