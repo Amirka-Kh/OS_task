@@ -11,6 +11,7 @@
 int main (int argc, char *argv[]) {
 
     char str[MAXCHAR];
+    FILE *fp;
     int in, out;
     char *src, *dst;
     struct stat statbuf;
@@ -18,7 +19,8 @@ int main (int argc, char *argv[]) {
 
     // open the input file 
     in = open (argv[1], O_RDONLY);
-    fgets(str, MAXCHAR, in);
+    fp = fopen(argv[1], "r");
+    fgets(str, MAXCHAR, fp);
 
     // open/create the output file 
     out = open (argv[2], O_RDWR | O_CREAT | O_TRUNC, mode );
