@@ -1,6 +1,14 @@
+#code 1
 Hello
 Hello
+
+#code2
 Hello
 
 Hello
 
+# The main difference is in 'printf("Hello\n")'
+# in the 2nd code first process is executed, we move to new line
+# and then again 'printf("\n")
+# so therefore when the second process is executed, the gap between
+# Hellos is equal to one line
