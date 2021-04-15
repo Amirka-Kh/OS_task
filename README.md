@@ -23,7 +23,7 @@ Unfortunately, we did not made an opportunity to set everything by input.
 You will need manually change every record in the code. Luckily, there is not
 many things to change.
 
-![code_ex](https://drive.google.com/file/d/1nlwD8RdhENaj2MSidyGjmYrZl-yWrraB/view?usp=sharing)
+![code_ex](https://github.com/Amirka-Kh/OS_task/blob/master/exaaa.png)
  
 To set your image, you should get path to image location and set to ***img_path***
 variable. In this example *baboon.jpg* and original code are in the same directory.
